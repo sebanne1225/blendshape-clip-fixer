@@ -1,0 +1,9 @@
+{
+  "name": "com.sebanne.blendshape-clip-fixer",
+  "displayName": "Blendshape Clip Fixer",
+  "version": "1.0.0",
+  "unity": "2022.3",
+  "description": "Fix missing blendShape curves in AnimationClips referenced by an AnimatorController. Generates fixed assets without modifying originals.",
+  "license": "MIT",
+  "author": { "name": "sebanne1225" }
+}
