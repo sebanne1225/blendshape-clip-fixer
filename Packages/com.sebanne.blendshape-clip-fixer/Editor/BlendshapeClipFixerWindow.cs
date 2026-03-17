@@ -86,7 +86,7 @@ namespace BlendshapeClipFixer.Editor
         private const float MapPanelMinHeight = 160f;
         private const float MapPanelMaxHeight = 700f;
 
-        [MenuItem("Tools/Blendshape Clip Fixer")]
+        [MenuItem("Tools/Sebanne/Blendshape Clip Fixer")]
         public static void Open()
         {
             var w = GetWindow<BlendshapeClipFixerWindow>();

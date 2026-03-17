@@ -24,7 +24,7 @@ https://sebanne1225.github.io/sebanne-listing/index.json
 ## How to use
 
 1. Unityメニューから開く  
-   Tools -> Blendshape Clip Fixer
+   Tools -> Sebanne -> Blendshape Clip Fixer
 
 2. 入力を設定する  
    - Source Controller: 修正したい AnimatorController
