@@ -1,63 +1,75 @@
-# Blendshape Clip Fixer
+# BlendShape Clip Fixer
 
-Unity Editorツールです。選択した AnimatorController が参照している AnimationClip 内の **blendShape カーブ**をスキャンし、  
-Missing になっている blendShape 名を **置換して修正版の Controller / Clip を生成**します。
+## 概要
 
-- 元の AnimatorController / AnimationClip は編集しません（非破壊）
-- 生成物だけを出力します（冪等運用向け）
+`BlendShape Clip Fixer` は、`AnimatorController` 内の Missing `BlendShape` カーブや renderer path のズレを見つけて、修正版の `AnimatorController` と `AnimationClip` を非破壊で生成する Unity Editor ツールです。
 
-## Requirements
+表情用 `AnimatorController` を別アバターへ移した時や、参照先メッシュの構成が変わって `BlendShape` カーブが missing になった時の修正を想定しています。
 
-- Unity 2022.3 以降（想定）
-- Editor拡張（実行はUnity Editor内のみ）
+元の `AnimatorController` と `AnimationClip` は直接変更せず、生成物だけを出力する運用を前提にしています。
 
-## Install (VCC / VPM)
+## 何ができるか
 
-VCCで Repository を追加してインストールします。
+- `AnimatorController` 内で使われている `AnimationClip` をまとめて走査できます
+- 選択した `SkinnedMeshRenderer` を基準に、missing `BlendShape` 名を一覧化できます
+- `Missing / Replace Map` で旧名から新名への置換先を指定できます
+- 必要なら `BlendShape` カーブの path を対象 renderer 側へ寄せて再生成できます
+- 元 asset を壊さず、修正版 Controller と Clip を新規生成できます
 
-- VCC: Settings -> Packages -> Add Repository
-- index.json のURLを貼り付け
+## 現在の対応範囲
 
-Repository URL:
-https://sebanne1225.github.io/sebanne-listing/index.json
+- Editor 拡張主体の package です
+- 対象は `AnimatorController` が参照する `AnimationClip` の `BlendShape` カーブです
+- 生成先は `Assets/BlendshapeClipFixer_Output/<ControllerName>_Fixed/` が既定です
+- `Clean output before generate` を有効にすると、同じ出力先を整理してから再生成できます
+- Runtime は現時点では予約領域で、実装の中心は `Editor/` にあります
 
-## How to use
+## VPM / VCC での導入
 
-1. Unityメニューから開く  
-   Tools -> Sebanne -> Blendshape Clip Fixer
+VCC の `Settings > Packages > Add Repository` から、次の listing URL を追加してください。
 
-2. 入力を設定する  
-   - Source Controller: 修正したい AnimatorController
-   - Target Avatar Root: アバターのルート（path修正を使うなら必須）
-   - Target SkinnedMeshRenderer: 表情BlendShapeが入っているメッシュ（例: Face/Body）
+`https://sebanne1225.github.io/sebanne-listing/index.json`
 
-3. Scan Controller を押す  
-   - コントローラー内の全クリップを走査して Missing を一覧表示します
+追加後、package 一覧から `BlendShape Clip Fixer` を導入できます。
 
-4. Missing / Replace Map を埋める  
-   - Missingになっている旧BlendShape名 -> 正しいBlendShape名 に割り当てます
+ローカル package として参照する場合は、この repo の root をそのまま package root として扱えます。
 
-5. Generate Fixed Assets を押す  
-   - 修正版の Controller と Clip を生成します
+## 使い方
 
-## Output
+1. Unity 上部メニューの `Tools/Sebanne/BlendShape Clip Fixer` を開きます。
+2. `Source Controller` に修正したい `AnimatorController` を指定します。
+3. 必要に応じて `Target Avatar Root` と `Target SkinnedMeshRenderer` を指定します。
+4. `Scan Controller` を押して、missing blendShape 名や path mismatch を確認します。
+5. `Missing / Replace Map` を埋めて、必要なら自動マップや候補絞り込みを使います。
+6. 問題がなければ `Generate Fixed Assets` を押して修正版 asset を生成します。
 
-生成物の既定出力先:
+## Scan / 診断
 
-Assets/BlendshapeClipFixer_Output/<ControllerName>_Fixed/
+- `Scan Controller` では、対象 `AnimatorController` 内の clip 数、`BlendShape` バインディング数、missing 名、path mismatch を確認できます
+- `Missing / Replace Map` では、旧名から新名への置換先を候補付きで指定できます
+- 失敗や未解決項目がある場合は、生成結果ダイアログと Unity Console ログから追跡できます
 
-- <ControllerName>_Fixed.controller
-- Clips/*.anim
+## 出力
 
-※ Clean output を有効にすると、同じ場所に毎回作り直すのでゴミが増えません。
+既定の出力先は次のとおりです。
 
-## Notes
+`Assets/BlendshapeClipFixer_Output/<ControllerName>_Fixed/`
 
-- Path mismatches が 0 なのに Missing が多い場合は、BlendShape名の命名規則が一致していない可能性が高いです  
-  -> Replace Map で名前を割り当てて修正してください
-- SkinnedMeshRenderer が1つに統一されている表情構成を想定しています
+- `<ControllerName>_Fixed.controller`
+- `Clips/*.anim`
 
-## License
+## 制限事項
 
-MIT License. See LICENSE.
-This tool is provided "as is" without warranty. Use at your own risk.
+- 表情構成は、主に 1 つの `SkinnedMeshRenderer` に集約されている前提を想定しています
+- missing が多いのに path mismatch が少ない場合は、命名規則のズレを手動で埋める必要があります
+- Runtime API を提供する package ではなく、Unity Editor 内で使う補助ツール寄りの構成です
+
+## Release Asset
+
+GitHub Release には、VPM 配布確認や手動保管に使える package zip を添付する想定です。
+
+- 例: `com.sebanne.blendshape-clip-fixer-1.0.0.zip`
+
+## ライセンス
+
+MIT License です。詳細は `LICENSE` を参照してください。

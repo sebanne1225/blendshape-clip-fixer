@@ -1,5 +1,0 @@
-{
-  "name": "com.sebanne.blendshape-clip-fixer.Editor",
-  "includePlatforms": ["Editor"],
-  "autoReferenced": true
-}
