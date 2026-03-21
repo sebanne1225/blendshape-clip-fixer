@@ -18,4 +18,4 @@
 - GitHub Release に version 付き package zip が付いているか
 - listing repo 側の見え方は別 repo で確認する
 - repo 内の `BOOTH_PACKAGE/` は作業用の固定名で運用する
-- BOOTH に貼る最終フォルダ名 / zip 名は `package.json.version` ベースで `BlendShapeClipFixer_Booth_Package_v1.0.1` を推奨する
+- BOOTH に貼る最終フォルダ名 / zip 名は `package.json.version` ベースで `BlendShapeClipFixer_Booth_Package_v1.0.2` を推奨する

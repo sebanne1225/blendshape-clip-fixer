@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-03-21
+
+### Changed
+
+- README の VCC / VPM 導入手順を `source.json` ベースの案内に整理
+- BOOTH 同梱テキストの案内文を公開向けに調整
+- release asset や公開導線の文言を現在の運用に合わせて更新
+
 ## [1.0.1] - 2026-03-18
 
 ### Changed

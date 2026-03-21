@@ -1,6 +1,6 @@
 BlendShape Clip Fixer
 BOOTH 配布パッケージ案内
-version: 1.0.1
+version: 1.0.2
 
 このツールは、AnimatorController 内の Missing BlendShape カーブを見つけて、
 修正版の Controller と AnimationClip を非破壊で生成する Unity Editor ツールです。

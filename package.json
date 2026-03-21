@@ -1,7 +1,7 @@
 {
   "name": "com.sebanne.blendshape-clip-fixer",
   "displayName": "BlendShape Clip Fixer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "unity": "2022.3",
   "description": "AnimatorController の Missing BlendShape カーブを検出・修正する Unity Editor ツールです。",
   "documentationUrl": "https://github.com/sebanne1225/blendshape-clip-fixer/blob/main/README.md",
