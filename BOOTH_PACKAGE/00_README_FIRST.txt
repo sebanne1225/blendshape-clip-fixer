@@ -1,42 +1,29 @@
 BlendShape Clip Fixer
-=====================
+BOOTH 配布パッケージ案内
+version: 1.0.1
 
-この zip は、BlendShape Clip Fixer の BOOTH 配布用案内ファイルです。
+このツールは、AnimatorController 内の Missing BlendShape カーブを見つけて、
+修正版の Controller と AnimationClip を非破壊で生成する Unity Editor ツールです。
 
-この zip の中に Unity package 本体は入っていません。
-導入は VCC / VPM から行ってください。
-repo 内では BOOTH_PACKAGE/ を作業用の固定名として使っています。
-BOOTH に貼る最終フォルダ名 / zip 名は別名推奨です。
-この repo の package.json.version (1.0.1) を使った推奨最終名は BlendShapeClipFixer_Booth_Package_v1.0.1 です。
+主な方針:
+- まずスキャン結果を確認します
+- 元の AnimatorController と AnimationClip には直接変更を加えません
+- 必要な修正版 asset だけを新規生成します
 
-最初に読む順番
---------------
-1. この `00_README_FIRST.txt`
-2. `01_VCC_INSTALL.txt`
-3. `02_QUICKSTART.txt`
+最初にやること:
+1. repo の README を確認してください
+2. まずは VCC / VPM で導入してください
+3. 導入後はスキャン結果を確認してください
 
-ツール概要
-----------
-AnimatorController 内の Missing BlendShape カーブを修正し、
-修正版の AnimatorController と AnimationClip を非破壊で生成する
-Unity Editor ツールです。
+導入の基本:
+- 主導線は VCC / VPM です
+- Git URL 導入は補助扱いです
 
-導入先
-------
-- VPM Repository URL
-  https://sebanne1225.github.io/sebanne-listing/index.json
+GitHub repo:
+https://github.com/sebanne1225/blendshape-clip-fixer
 
-- Unity メニュー
-  Tools/Sebanne/BlendShape Clip Fixer
+VPM source.json:
+https://sebanne1225.github.io/sebanne-listing/source.json
 
-主な注意点
-----------
-- 元の AnimatorController や AnimationClip は直接変更しません
-- 対象 SkinnedMeshRenderer が未設定だと、一部の判定や置換候補確認が使えません
-- まずスキャン結果を確認してから生成してください
-- package 本体の導入は VCC / VPM 前提です
-
-補足
-----
-- 手動 import 用の unitypackage や package zip は、この zip には同梱していません
-- ライセンスは `LICENSE` を参照してください
+このフォルダには、BOOTH から購入した方向けの最小案内だけを入れています。
+詳しい仕様や制限事項は README を参照してください。

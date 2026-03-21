@@ -24,15 +24,13 @@
 - `Clean output before generate` を有効にすると、同じ出力先を整理してから再生成できます
 - Runtime は現時点では予約領域で、実装の中心は `Editor/` にあります
 
-## VPM / VCC での導入
+## VCC / VPM での導入
 
-VCC の `Settings > Packages > Add Repository` から、次の listing URL を追加してください。
+1. VPM source として `https://sebanne1225.github.io/sebanne-listing/source.json` を追加します。
+2. package 一覧から `BlendShape Clip Fixer` (`com.sebanne.blendshape-clip-fixer`) を追加します。
+3. Unity を開き、package が導入されていることを確認します。
 
-`https://sebanne1225.github.io/sebanne-listing/index.json`
-
-追加後、package 一覧から `BlendShape Clip Fixer` を導入できます。
-
-ローカル package として参照する場合は、この repo の root をそのまま package root として扱えます。
+listing repo: `https://github.com/sebanne1225/sebanne-listing`
 
 ## 使い方
 
