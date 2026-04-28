@@ -41,7 +41,6 @@
 - まず scan してから map を詰める
 - focused clip モードの挙動を壊さない
 - まず短い plan を出してから作業
-- まだ commit / push はしない
 
 ## Key Files
 
