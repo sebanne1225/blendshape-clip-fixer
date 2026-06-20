@@ -2,17 +2,14 @@
 
 このファイルは内部向けの整理メモです。公開向けの説明は `README.md` を優先します。
 
-## ツール名
+## 基本情報
 
-- BlendShape Clip Fixer
-
-## package名
-
-- `com.sebanne.blendshape-clip-fixer`
-
-## 表示名
-
-- `BlendShape Clip Fixer`
+- ツール名: `BlendShape Clip Fixer`
+- package名: `com.sebanne.blendshape-clip-fixer`
+- 表示名: `BlendShape Clip Fixer`
+- Runtime asmdef: `Sebanne.BlendshapeClipFixer`
+- Editor asmdef: `Sebanne.BlendshapeClipFixer.Editor`
+- 現在 version: `1.0.2`
 
 ## 想定用途
 
