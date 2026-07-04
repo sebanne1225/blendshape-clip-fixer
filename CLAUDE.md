@@ -10,7 +10,7 @@
 ## Current State
 
 - repo root が package source of truth です。`package.json`、`Editor/`、`Runtime/`、`Documentation~/`、`Samples~/`、`README.md`、`CHANGELOG.md`、release workflow が root に揃っています。
-- `package.json` は `1.0.2` です。tag は `1.0.2` まであります。
+- version / tag は Resume Notes の tag 履歴を参照してください。
 - 実装の中心は `Editor/UI/BlendshapeClipFixerWindow.cs` です。menu は `Tools/Sebanne/BlendShape Clip Fixer` です。
 - Window では `AnimatorController` 走査、target renderer 指定、missing / replace map 編集、scan summary、binding preview、generate まで一通り行えます。
 - mapping UI は手動編集に加えて、完全一致 ignore case、自動正規化 / fuzzy、keyword 一括マップ、候補絞り込みを持っています。
@@ -57,7 +57,6 @@
 ## Resume Notes
 
 - package: `com.sebanne.blendshape-clip-fixer`
-- version: `1.0.2`
-- latest tag: `1.0.2`
-- release asset 名: `com.sebanne.blendshape-clip-fixer-1.0.2.zip`
+- tag 履歴（追記 only）: `1.0.0` (2026-02-25) → `1.0.1` (2026-03-18) → `1.0.2` (2026-03-21)
+- release asset 名の形式: `com.sebanne.blendshape-clip-fixer-{version}.zip`（version は最新 tag = `package.json` と一致。release workflow が検証）
 - 既定出力の親フォルダ: `Assets/BlendshapeClipFixer_Output/`
