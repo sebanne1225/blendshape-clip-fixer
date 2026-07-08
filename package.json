@@ -6,6 +6,8 @@
   "description": "AnimatorController の Missing BlendShape カーブを検出・修正する Unity Editor ツールです。",
   "documentationUrl": "https://github.com/sebanne1225/blendshape-clip-fixer/blob/main/README.md",
   "changelogUrl": "https://github.com/sebanne1225/blendshape-clip-fixer/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/sebanne1225/blendshape-clip-fixer/blob/main/LICENSE",
+  "url": "https://github.com/sebanne1225/blendshape-clip-fixer",
   "author": {
     "name": "sebanne"
   }
