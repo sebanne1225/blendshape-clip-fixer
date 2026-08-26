@@ -42,21 +42,6 @@
 - focused clip モードの挙動を壊さない
 - まず短い plan を出してから作業
 
-## Key Files
-
-- `Editor/UI/BlendshapeClipFixerWindow.cs`
-- `Editor/Core/BlendshapeControllerScanner.cs`
-- `Editor/Core/BlendshapeClipFixerGenerator.cs`
-- `Editor/Core/AnimatorControllerUtil.cs`
-- `Editor/Utility/AssetPathUtil.cs`
-- `Editor/Utility/BlendshapeNameUtil.cs`
-- `Editor/Diagnostics/BlendshapeClipFixerLog.cs`
-- `README.md`
-- `.github/workflows/release.yml`
-
 ## Resume Notes
 
-- package: `com.sebanne.blendshape-clip-fixer`
 - tag 履歴（追記 only）: `1.0.0` (2026-02-25) → `1.0.1` (2026-03-18) → `1.0.2` (2026-03-21)
-- release asset 名の形式: `com.sebanne.blendshape-clip-fixer-{version}.zip`（version は最新 tag = `package.json` と一致。release workflow が検証）
-- 既定出力の親フォルダ: `Assets/BlendshapeClipFixer_Output/`
